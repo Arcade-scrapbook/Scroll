@@ -24,6 +24,7 @@
             min-height: 100vh;
             font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
                 Helvetica, Arial, sans-serif, system-ui;
+            overflow: auto;
         }
 
         body::before {
@@ -92,6 +93,27 @@
             color: canvas;
             padding: 0 1rem;
             z-index: 3;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-menu li {
+            margin: 0;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         article {
@@ -254,29 +276,69 @@
                 clip-path: inset(100% 0 0 0);
             }
         }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #topBtn:hover {
+            background-color: #000;
+        }
     </style>
 </head>
 
 <body>
-    <a class="bear-link" href="https://twitter.com/intent/follow?screen_name=jh3yy" target="_blank"
-        rel="noreferrer noopener">
+    <a class="bear-link" href="https://twitter.com/intent/follow?screen_name=jh3yy" target="_blank" rel="noreferrer noopener">
         <svg class="w-9" viewBox="0 0 969 955" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="161.191" cy="320.191" r="133.191" stroke="currentColor" stroke-width="20"></circle>
             <circle cx="806.809" cy="320.191" r="133.191" stroke="currentColor" stroke-width="20"></circle>
             <circle cx="695.019" cy="587.733" r="31.4016" fill="currentColor"></circle>
             <circle cx="272.981" cy="587.733" r="31.4016" fill="currentColor"></circle>
-            <path
-                d="M564.388 712.083C564.388 743.994 526.035 779.911 483.372 779.911C440.709 779.911 402.356 743.994 402.356 712.083C402.356 680.173 440.709 664.353 483.372 664.353C526.035 664.353 564.388 680.173 564.388 712.083Z"
-                fill="currentColor"></path>
+            <path d="M564.388 712.083C564.388 743.994 526.035 779.911 483.372 779.911C440.709 779.911 402.356 743.994 402.356 712.083C402.356 680.173 440.709             440.709 664.353 483.372 664.353C526.035 664.353 564.388 680.173 564.388 712.083Z" fill="currentColor"></path>
             <rect x="310.42" y="448.31" width="343.468" height="51.4986" fill="#FF1E1E"></rect>
             <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M745.643 288.24C815.368 344.185 854.539 432.623 854.539 511.741H614.938V454.652C614.938 433.113 597.477 415.652 575.938 415.652H388.37C366.831 415.652 349.37 433.113 349.37 454.652V511.741L110.949 511.741C110.949 432.623 150.12 344.185 219.845 288.24C289.57 232.295 384.138 200.865 482.744 200.865C581.35 200.865 675.918 232.295 745.643 288.24Z"
-                fill="currentColor"></path>
+                d="M745.643 288.24C815.368 344.185 854.539 432.623 854.539 511.741H614.938V454.652C614.938 433.113 597.477 415.652 575.938 415.652H388.37C366.831 415.652 349.37 433.113 349.37 454.652V511.741L110.949 511.741C110.949 432.623 150.12 344.185 219.845 288.24C289.57 232.295 384.138 200.865 482.744 200.865C581.35 200.865 675.918 232.295 745.643 288.24Z" fill="currentColor"></path>
         </svg>
     </a>
-    <nav></nav>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+            <li><a href="#section4">Section 4</a></li>
+            <li><a href="#section5">Section 5</a></li>
+        </ul>
+    </nav>
     <main>
-        <article style="--index: 0">
+        <article style="--index: 0" id="section1">
             <div class="article__img">
                 <img src="https://picsum.photos/1920/1080?random=1" alt="" />
             </div>
@@ -286,7 +348,7 @@
                 <a href="#">Follow</a>
             </div>
         </article>
-        <article style="--index: 1">
+        <article style="--index: 1" id="section2">
             <div class="article__img">
                 <img src="https://picsum.photos/1920/1080?random=2" alt="" />
             </div>
@@ -296,7 +358,7 @@
                 <a href="#">Check it out</a>
             </div>
         </article>
-        <article style="--index: 2">
+        <article style="--index: 2" id="section3">
             <div class="article__img">
                 <img src="https://picsum.photos/1920/1080?random=3" alt="" />
             </div>
@@ -306,7 +368,7 @@
                 <a href="#">Get Styling</a>
             </div>
         </article>
-        <article style="--index: 3">
+        <article style="--index: 3" id="section4">
             <div class="article__img">
                 <img src="https://picsum.photos/1920/1080?random=4" alt="" />
             </div>
@@ -316,7 +378,7 @@
                 <a href="#">No JavaScript</a>
             </div>
         </article>
-        <article style="--index: 4">
+        <article style="--index: 4" id="section5">
             <div class="article__img">
                 <img src="https://picsum.photos/1920/1080?random=5" alt="" />
             </div>
@@ -377,6 +439,31 @@
             </div>
         </article>
     </main>
+    <footer>
+        <p>© 2024 Your Company. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+    <button id="topBtn" title="Go to top">Top</button>
+
+    <script>
+        // Get the button:
+        let mybutton = document.getElementById("topBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
 </body>
 
 </html>
+
